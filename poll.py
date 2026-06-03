@@ -10,17 +10,17 @@ async def main():
     today = datetime.now()
     weekday = today.weekday()
     
-    if weekday == 6:  # Воскресенье
-        target_day = "Пн"
-        target_date = today + timedelta(days=1)
-    elif weekday == 1:  # Вторник
+    if weekday == 0:  # Понедельник → Среда
         target_day = "Ср"
-        target_date = today + timedelta(days=1)
-    elif weekday == 3:  # Четверг
+        target_date = today + timedelta(days=2)
+    elif weekday == 2:  # Среда → Пятница
         target_day = "Пт"
-        target_date = today + timedelta(days=1)
+        target_date = today + timedelta(days=2)
+    elif weekday == 4:  # Пятница → Понедельник
+        target_day = "Пн"
+        target_date = today + timedelta(days=3)
     else:
-        print("Сегодня не день отправки")
+        print("Сегодня не день отправки (нужны: Пн, Ср, Пт)")
         return
     
     line1 = "ЖК столичный площадка"

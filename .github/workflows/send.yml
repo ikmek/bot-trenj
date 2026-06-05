@@ -1,5 +1,4 @@
 name: Send Training Poll
-
 on:
   schedule:
     - cron: '0 10 * * 1'  # Понедельник 13:00 МСК
